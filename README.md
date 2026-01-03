@@ -40,12 +40,18 @@ All incoming email content is safely opened in Thunderbird to inspect the messag
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/LhDCRz4.jpeg" height="85%" width="85%" alt="Email Inspection"/>
+  <img src="https://i.imgur.com/wxZwol4.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
 </p>
+
 
 <h2>Email Header Analysis</h2>
 <p>
 Inspect email headers to extract sender IP, relay servers, SPF/DMARC information, and trace the email path for authenticity checks. This allows validation of the sender domain and potential spoofing indicators.
+
+1) What is the Transfer Reference Number listed in the email's Subject?
+<p align="center">
+  <img src="https://i.imgur.com/hJ5TXDN.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
 </p>
 
 <h2>Originating IP and Network Analysis</h2>
