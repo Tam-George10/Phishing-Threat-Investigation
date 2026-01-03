@@ -25,9 +25,13 @@ All analysis is performed within a controlled sandbox environment (VirtualBox) t
 Findings are documented in a concise incident report, summarizing indicators of compromise, analysis results, and final assessment.
 
 <h2>Tools Used</h2>
-- <b>Mozilla Thunderbird:</b> Email client used to safely inspect the phishing message, analyze headers, sender information, and attachment metadata  
-- <b>Vim:</b> Lightweight text editor used for reviewing raw email headers and extracting artifacts for analysis  
-- <b>VirusTotal:</b> Threat intelligence platform used to investigate the attachment hash and assess malicious indicators across multiple engines  
+
+<ul>
+  <li><b>Mozilla Thunderbird:</b> Email client used to safely inspect the phishing message, analyze headers, sender information, and attachment metadata</li>
+  <li><b>Vim:</b> Lightweight text editor used for reviewing raw email headers and extracting artifacts for analysis</li>
+  <li><b>VirusTotal:</b> Threat intelligence platform used to investigate the attachment hash and assess malicious indicators across multiple engines</li>
+</ul>
+ 
 
 <h2>Utilities Used</h2>
 <p>  
