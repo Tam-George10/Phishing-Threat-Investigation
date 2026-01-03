@@ -4,64 +4,77 @@ This repository presents a hands-on SOC investigation focused on identifying, an
 <h1>Real-World Scenario</h1>
 A Sales Executive at Greenholt PLC received an email that he didn't expect to receive from a customer. He claims that the customer never uses generic greetings such as "Good day" and didn't expect any amount of money to be transferred to his account. The email also contains an attachment that he never requested. He forwarded the email to the SOC (Security Operations Center) department for further investigation. 
 
-
 <h2>Description</h2>
 <b>
 This project focuses on the full investigation and triage of a suspected phishing email to determine whether it represents a legitimate business communication or a malicious phishing attempt.
 </b>
 <br /><br />
-All analysis is performed within a controlled sandbox environment (VirtualBox) to ensure safe handling of potentially malicious content. The investigation follows a structured SOC workflow, including email header analysis, sender and domain validation, IP reputation analysis, and attachment inspection.
-<br /><br />
-The objective of this investigation is to answer the following key questions:
-<br /><br />
-1) What is the transfer reference number listed in the email subject?<br />
-2) Who is the email from?<br />
-3) What is the sender’s email address?<br />
-4) What email address is configured to receive replies?<br />
-5) What is the originating IP address?<br />
-6) Who owns the originating IP address (defanged)?<br />
-7) What is the SPF record for the return-path domain?<br />
-8) What is the DMARC record for the return-path domain?<br />
-9) What is the name of the attachment?<br />
-10) Finding and investigating the SHA256 hash of the attachment<br />
-11) What is the file size of the attachment?<br />
-12) What is the true file extension of the attachment?<br />
+
+<b>Investigation Workflow Overview:</b>
+<ul>
+  <li>📧 <b>Email Inspection via Thunderbird and Vim</b></li>
+  <li>📝 <b>Email Header Analysis</b></li>
+  <li>🌐 <b>Originating IP and Network Analysis</b></li>
+  <li>🔒 <b>Domain Authentication Records Analysis</b></li>
+  <li>📎 <b>Attachment Examination and SHA256 Investigation</b></li>
+  <li>📑 <b>Investigation Findings and Reporting</b></li>
+</ul>
 <br />
-Based on the findings, a concise incident report is produced summarizing indicators of compromise, analysis results, and final assessment, after which the case is formally closed.
-
-
+All analysis is performed within a controlled sandbox environment (VirtualBox) to ensure safe handling of potentially malicious content. The investigation follows a structured SOC workflow, including inspecting the email content, analyzing headers, validating sender domains, investigating the originating IP, and examining attachments.
+<br /><br />
+Findings are documented in a concise incident report, summarizing indicators of compromise, analysis results, and final assessment.
 
 <h2>Tools Used</h2>
-
 - <b>Mozilla Thunderbird:</b> Email client used to safely inspect the phishing message, analyze headers, sender information, and attachment metadata  
 - <b>Vim:</b> Lightweight text editor used for reviewing raw email headers and extracting artifacts for analysis  
 - <b>VirusTotal:</b> Threat intelligence platform used to investigate the attachment hash and assess malicious indicators across multiple engines  
 
 <h2>Utilities Used</h2>
-
-<p>  <b>Oracle VirtualBox:</b> Provided an isolated sandbox environment for safely handling and analyzing potentially malicious email artifacts. </p>
-
+<p>  
+<b>Oracle VirtualBox:</b> Provided an isolated sandbox environment for safely handling and analyzing potentially malicious email artifacts.  
+</p>
 
 <h2>Initial Email Inspection via Thunderbird</h2>
-
-
-<p align="center">
-<img src="https://i.imgur.com/LhDCRz4.jpeg" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+<p>
+All incoming email content is safely opened in Thunderbird to inspect the message, headers, sender info, subject, and any attachments. This ensures safe triage without executing any malicious content.
 </p>
 
-<h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
-
 <p align="center">
-<img src="https://i.imgur.com/krRFrK5.png" height="85%" width="85%" alt="Image Analysis Dataflow"/>
+<img src="https://i.imgur.com/LhDCRz4.jpeg" height="85%" width="85%" alt="Email Inspection"/>
 </p>
 
+<h2>Email Header Analysis</h2>
+<p>
+Inspect email headers to extract sender IP, relay servers, SPF/DMARC information, and trace the email path for authenticity checks. This allows validation of the sender domain and potential spoofing indicators.
+</p>
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+<h2>Originating IP and Network Analysis</h2>
+<p>
+Identify the originating IP from headers and perform geolocation, reputation, and ownership analysis to determine if the source is suspicious or malicious.
+</p>
+
+<h2>Domain Authentication Records Analysis</h2>
+<p>
+Validate SPF and DMARC records for the return-path domain to detect potential spoofing or misconfigured domains.
+</p>
+
+<h2>Attachment Examination and SHA256 Investigation</h2>
+<p>
+Analyze the attachment in a sandbox environment. Determine the file name, size, actual file extension, and calculate the SHA256 hash to check against threat intelligence platforms like VirusTotal for malicious indicators.
+</p>
+
+<h2>Investigation Findings and Reporting</h2>
+<p>
+Compile all findings into a structured report including:
+<ul>
+  <li>Indicators of compromise</li>
+  <li>Threat analysis and triage results</li>
+  <li>Final assessment and recommendations</li>
+  <li>Closing the case</li>
+</ul>
+</p>
+
+<h2>World map of incoming attacks after 24 hours (demo)</h2>
+<p align="center">
+<img src="https://i.imgur.com/krRFrK5.png" height="85%" width="85%" alt="World map of attacks"/>
+</p>
