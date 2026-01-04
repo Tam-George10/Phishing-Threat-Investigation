@@ -58,20 +58,81 @@ Inspect email headers to extract sender IP, relay servers, SPF/DMARC information
 </p>
 </p>
 
+2) Who is the email from?
+<p align="center">
+  <img src="https://i.imgur.com/Ns5Iq46.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+3) What is his email address?
+<p align="center">
+  <img src="https://i.imgur.com/dsGeBSW.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+4) What email address will receive a reply to this email?
+<p align="center">
+  <img src="https://i.imgur.com/GCcopiG.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+5) What is the Originating IP?
+<p align="center">
+  <img src="https://i.imgur.com/hOBZu7c.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+
 <h2>Originating IP and Network Analysis</h2>
 <p>
 Identify the originating IP from headers and perform geolocation, reputation, and ownership analysis to determine if the source is suspicious or malicious.
+
+1) Who is the owner of the Originating IP?
+<p align="center">
+  <img src="https://i.imgur.com/gNYa9A0.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
 </p>
 
-<h2>Domain Authentication Records Analysis</h2>
+<h2>Domain Authentication Records Analysis Using MXtoolbox</h2>
 <p>
 Validate SPF and DMARC records for the return-path domain to detect potential spoofing or misconfigured domains.
+
+1. What is the SPF record for the Return-Path domain?
+<p align="center">
+  <img src="https://i.imgur.com/6e2MrVR.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
 </p>
+
+2. What is the DMARC record for the Return-Path domain?
+<p align="center">
+  <img src="https://i.imgur.com/mT4ie2n.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
 
 <h2>Attachment Examination and SHA256 Investigation</h2>
 <p>
 Analyze the attachment in a sandbox environment. Determine the file name, size, actual file extension, and calculate the SHA256 hash to check against threat intelligence platforms like VirusTotal for malicious indicators.
+
+1. What is the name of the attachment?
+<p align="center">
+  <img src="https://i.imgur.com/BL05wHF.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
 </p>
+
+2. What is the SHA256 hash of the file attachment?
+<p align="center">
+  <img src="https://i.imgur.com/HZnKeo8.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+3. Investigation With VirusTotal
+<p align="center">
+  <img src="https://i.imgur.com/Zgm1V0a.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+4. What is the attachments file size?
+<p align="center">
+  <img src="https://i.imgur.com/8JcProW.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
+5. What is the actual file extension of the attachment?
+<p align="center">
+  <img src="https://i.imgur.com/nHXY2mB.png" width="80%" alt="Email Inspection via Thunderbird and Vim"/>
+</p>
+
 
 <h2>Investigation Findings and Reporting</h2>
 <p>
